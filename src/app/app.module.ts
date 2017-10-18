@@ -4,7 +4,9 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { AppComponent } from './app.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { ProductComponent } from './shared/product/product.component';
+import { ProductComponent } from './product/product.component';
+import { ProductService } from './shared/product.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,13 @@ import { ProductComponent } from './shared/product/product.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    ProductService
+   ],
+   
   bootstrap: [AppComponent]
 })
 export class AppModule { }

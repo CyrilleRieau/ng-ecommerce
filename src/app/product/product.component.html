@@ -1,0 +1,19 @@
+<h1>Liste de produits</h1>
+<table>
+    <tr>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Période de semis</th>
+        <th>Récolte</th>
+        <th>Variété</th>
+    </tr>
+    <tr *ngFor="let product of listeProducts">
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.seedPeriod}}</td>
+        <td>{{product.harvesting}}</td>
+        <td>{{product.variety}}</td>
+        <!--<td><button (click)="removeUser(user.id)">Supprimer</button></td>
+      <td><button (click)="aModifier=user">Modifier</button></td>-->
+    </tr>
+</table>
