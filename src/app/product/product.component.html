@@ -3,17 +3,24 @@
     <tr>
         <th>Nom</th>
         <th>Description</th>
+        <th>Prix</th>
         <th>Période de semis</th>
-        <th>Récolte</th>
+        <th>Taille</th>
+        <th>Ajout Produit</th>
         <th>Variété</th>
+        <th>Sol</th>
     </tr>
     <tr *ngFor="let product of listeProducts">
         <td>{{product.name}}</td>
         <td>{{product.description}}</td>
-        <td>{{product.seedPeriod}}</td>
-        <td>{{product.harvesting}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.seed_period }}</td>
+        <td>{{product.carving }}</td>
+        <td>{{product.adding | date }}</td>
         <td>{{product.variety}}</td>
-        <!--<td><button (click)="removeUser(user.id)">Supprimer</button></td>
-      <td><button (click)="aModifier=user">Modifier</button></td>-->
+        <td> Acid :{{product.prodsoil.acid}}, Argile :{{product.prodsoil.clayey}}, Calcaire :{{product.prodsoil.chalky}}, Sableux :{{product.prodsoil.sandy}}, Humus :{{product.prodsoil.humus}}</td>
     </tr>
+    <!--<td><button (click)="removeUser(user.id)">Supprimer</button></td>
+      <td><button (click)="aModifier=user">Modifier</button></td>-->
+
 </table>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../shared/product';
 import {ProductService} from '../shared/product.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-product',
