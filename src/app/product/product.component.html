@@ -2,6 +2,8 @@
 <table>
     <tr>
         <th>Nom</th>
+        <th>Couverture</th>
+        <th>Image</th>
         <th>Description</th>
         <th>Prix</th>
         <th>Période de semis</th>
@@ -12,6 +14,8 @@
     </tr>
     <tr *ngFor="let product of listeProducts">
         <td>{{product.name}}</td>
+        <td>{{product.cover}}</td>
+        <td>{{product.file}}</td>
         <td>{{product.description}}</td>
         <td>{{product.price}}</td>
         <td>{{product.seed_period }}</td>

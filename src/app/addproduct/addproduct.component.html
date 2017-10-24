@@ -1,0 +1,75 @@
+<section>
+
+    <label>Nom</label>
+    <input type="text" [(ngModel)]="newProduct.name">
+    <label>Description</label>
+    <input type="text" [(ngModel)]="newProduct.description">
+    <label>Couverture</label>
+    <input type="text" [(ngModel)]="newProduct.cover">
+    <label>Image</label>
+    <input type="image" [(ngModel)]="newProduct.file">
+    <label>Prix</label>
+    <input type="number" [(ngModel)]="newProduct.price">
+    <label>Couverture</label>
+    <input type="date" [(ngModel)]="newProduct.adding">
+    <label>Marque</label>
+    <input type="text" [(ngModel)]="newProduct.brand">
+    <label>Disponible en Premium</label>
+    <input type="checkbox" [(ngModel)]="newProduct.isPremium">
+    <label>Soldé </label>
+    <input type="checkbox" [(ngModel)]="newProduct.onSold">
+    <label>Vendeur</label>
+    <input type="text" [(ngModel)]="newProduct.vendor">
+    <label>Note</label>
+    <input type="number" [(ngModel)]="newProduct.note">
+    <label>Nombre de Produits</label>
+    <input type="number" [(ngModel)]="newProduct.numberOfProducts">
+    <!--<label>Nombre de votes</label>
+  <input type="number" [(ngModel)]="newProduct.numberOfVote">
+  <label>Nombre de Commentaires</label>
+  <input type="text" [(ngModel)]="newProduct.numberOfComments">-->
+    <label>Variété</label>
+    <input type="text" [(ngModel)]="newProduct.variety">
+    <label>Période de semis</label>
+    <input type="text" [(ngModel)]="newProduct.seedPeriod">
+    <label>Espèce</label>
+    <input type="text" [(ngModel)]="newProduct.species">
+    <label>Type</label>
+    <input type="date" [(ngModel)]="newProduct.type">
+
+    <label>Récolte</label>
+    <input type="text" [(ngModel)]="newProduct.harvest">
+    <label>Taille</label>
+    <input type="checkbox" [(ngModel)]="newProduct.carving">
+    <label>Couverture</label>
+    <input type="date" [(ngModel)]="newProduct.cover">
+    <label>Traitement</label>
+    <input type="checkbox" [(ngModel)]="newProduct.treatment">
+    <label>Engrais</label>
+    <input type="text" [(ngModel)]="newProduct.fertilize">
+    <label>Exposition</label>
+    <input type="radio" [(ngModel)]="newProduct.exposition" [value]="windy" id="windy" name="newProduct.exposition.windy" /> <label for="windy">Venteuse</label><br />
+    <input type="radio" [(ngModel)]="newProduct.exposition" [value]="sunny" id="sunny" name="newProduct.exposition.sunny" /> <label for="sunny">Ensoleillé</label><br />
+
+    <label>Irrigation</label>
+    <input type="radio" [(ngModel)]="newProduct.irrigation" [value]="low" id="low" name="low" /> <label for="low">Faible</label><br />
+    <input type="radio" [(ngModel)]="newProduct.irrigation" [value]="middle" id="middle" name="middle" /> <label for="middle">Moyenne</label><br />
+    <input type="radio" [(ngModel)]="newProduct.irrigation" [value]="high" id="high" name="high" /> <label for="high">Elevée</label><br />
+
+    <label>Resistance</label>
+    <input type="radio" [(ngModel)]="newProduct.resistance" [value]="inferior0°C" id="inferior0°C" name="inferior0°C" /> <label for="inferior0°C">Inférieur à 0°C</label><br />
+    <input type="radio" [(ngModel)]="newProduct.resistance" [value]="between0And5°C" id="between0And5°C" name="between0And5°C" /> <label for="between0And5°C">Entre 0 et 5°C</label><br />
+    <input type="radio" [(ngModel)]="newProduct.resistance" [value]="superior5°C" id="superior5°C" name="superior5°C" /> <label for="superior5°C">Supérieur à 5°C</label><br />
+
+    <label>Sol</label>
+    <input type="checkbox" [(ngModel)]="newProduct.soil" [value]="acid" id="acid" name="acid" /> <label for="acid">Acide</label><br />
+    <input type="checkbox" [(ngModel)]="newProduct.soil" [value]="clayey" id="clayey" name="clayey" /> <label for="clayey">Argileux</label><br />
+    <input type="checkbox" [(ngModel)]="newProduct.soil" [value]="chalky" id="chalky" name="chalky" /> <label for="chalky">Calcaire</label><br />
+    <input type="checkbox" [(ngModel)]="newProduct.soil" [value]="sandy" id="sandy" name="sandy" /> <label for="sandy">Sableux</label><br />
+    <input type="checkbox" [(ngModel)]="newProduct.soil" [value]="humus" id="humus" name="humus" /> <label for="humus">Humus</label><br />
+
+    <label>Commentaire</label>
+    <input type="text" [(ngModel)]="newProduct.comments">
+
+    <button (click)="addProduct()">Ajouter</button>
+</section>
