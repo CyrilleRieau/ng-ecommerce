@@ -36,10 +36,10 @@ export class AddproductComponent implements OnInit {
         carving:false,
         treatment:false,
         fertilize:'',
-        exposition:'', 
-        irrigation:'', 
-        resistance:'', 
-        soil:'', 
+        exposition:['sunny', 'windy'], 
+        irrigation:['low', 'middle', 'high'], 
+        resistance:['inferiorto0','between0and5','superiorto5'], 
+        soil:['acid', 'chalky', 'clayey', 'sandy', 'humus'], 
         comments:'',  
       };
     }
