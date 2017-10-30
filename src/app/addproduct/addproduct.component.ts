@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product } from '../shared/product';
+import { ProductService } from '../shared/product.service';
+import { ArrayService } from '../shared/array.service';
 
 @Component({
   selector: 'app-addproduct',
@@ -7,12 +9,15 @@ import { Product } from '../shared/product';
   styleUrls: ['./addproduct.component.css']
 })
 export class AddproductComponent implements OnInit {
-
+  irrig;
+  soil;
+  expo;
+  resist;
   newProduct:Product;
   @Output("onAdd")
   eventAjout:EventEmitter<Product> = new EventEmitter();
     
-    constructor() { 
+    constructor(private productService:ProductService, private arrayService:ArrayService) { 
       this.newProduct = {
         name:'',
         description:'',
@@ -36,16 +41,19 @@ export class AddproductComponent implements OnInit {
         carving:false,
         treatment:false,
         fertilize:'',
-        exposition:['sunny', 'windy'], 
-        irrigation:['low', 'middle', 'high'], 
-        resistance:['inferiorto0','between0and5','superiorto5'], 
-        soil:['acid', 'chalky', 'clayey', 'sandy', 'humus'], 
+        exposition:this.expo, 
+        irrigation:this.irrig, 
+        resistance:this.resist, 
+        soil:this.soil, 
         comments:'',  
       };
     }
   
     ngOnInit() {
-      
+      this.arrayService.getIrrig().subscribe((irrigs)=> this.irrig = irrigs);
+      this.arrayService.getExposi().subscribe((expos)=> this.expo = expos);
+      this.arrayService.getResist().subscribe((resists)=> this.resist = resists);
+      this.arrayService.getSoil().subscribe((soils)=> this.soil = soils);
     }
   
     addProduct(){

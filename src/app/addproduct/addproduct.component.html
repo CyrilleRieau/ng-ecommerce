@@ -47,26 +47,30 @@
     <input type="checkbox" [(ngModel)]="newProduct.treatment">
     <label>Engrais</label>
     <input type="text" [(ngModel)]="newProduct.fertilize">
+
     <label>Exposition</label>
-    <input type="radio" [(ngModel)]="newProduct.exposition" [value]="windy" id="windy" name="newProduct.exposition.windy" /> <label for="windy">Venteuse</label><br />
-    <input type="radio" [(ngModel)]="newProduct.exposition" [value]="sunny" id="sunny" name="newProduct.exposition.sunny" /> <label for="sunny">Ensoleillé</label><br />
+    <ng-template *ngFor="let exposition of expo">
+        <input type="radio" [(ngModel)]="newProduct.exposition" [value]="exposition" id="windy" name="newProduct.exposition.windy" />
+        <label for="windy">{{exposition.label}}</label><br />
+    </ng-template>
+    <input type="radio" [(ngModel)]="newProduct.exposition" value="sunny" id="sunny" name="newProduct.exposition.sunny" /> <label for="sunny">Ensoleillé</label><br />
 
     <label>Irrigation</label>
-    <input type="radio" [(ngModel)]="newProduct.irrigation" [value]="low" id="low" name="low" /> <label for="low">Faible</label><br />
-    <input type="radio" [(ngModel)]="newProduct.irrigation" [value]="middle" id="middle" name="middle" /> <label for="middle">Moyenne</label><br />
-    <input type="radio" [(ngModel)]="newProduct.irrigation" [value]="high" id="high" name="high" /> <label for="high">Elevée</label><br />
+    <input type="radio" [(ngModel)]="newProduct.irrigation" value="low" id="low" name="low" /> <label for="low">Faible</label><br />
+    <input type="radio" [(ngModel)]="newProduct.irrigation" value="middle" id="middle" name="middle" /> <label for="middle">Moyenne</label><br />
+    <input type="radio" [(ngModel)]="newProduct.irrigation" value="high" id="high" name="high" /> <label for="high">Elevée</label><br />
 
     <label>Resistance</label>
-    <input type="radio" [(ngModel)]="newProduct.resistance" [value]="inferiorto0" id="inferior0°C" name="inferior0°C" /> <label for="inferiorto0">Inférieur à 0°C</label><br />
-    <input type="radio" [(ngModel)]="newProduct.resistance" [value]="between0and5" id="between0And5°C" name="between0And5°C" /> <label for="between0and5">Entre 0 et 5°C</label><br />
-    <input type="radio" [(ngModel)]="newProduct.resistance" [value]="superiorto0" id="superior5°C" name="superior5°C" /> <label for="superiorto5">Supérieur à 5°C</label><br />
+    <input type="radio" [(ngModel)]="newProduct.resistance" value="inferiorto0" id="inferior0°C" name="inferior0°C" /> <label for="inferiorto0">Inférieur à 0°C</label><br />
+    <input type="radio" [(ngModel)]="newProduct.resistance" value="between0and5" id="between0And5°C" name="between0And5°C" /> <label for="between0and5">Entre 0 et 5°C</label><br />
+    <input type="radio" [(ngModel)]="newProduct.resistance" value="superiorto0" id="superior5°C" name="superior5°C" /> <label for="superiorto5">Supérieur à 5°C</label><br />
 
     <label>Sol</label>
-    <input type="checkbox" [(ngModel)]="newProduct.soil" [value]="acid" id="acid" name="acid" /> <label for="acid">Acide</label><br />
-    <input type="checkbox" [(ngModel)]="newProduct.soil" [value]="clayey" id="clayey" name="clayey" /> <label for="clayey">Argileux</label><br />
-    <input type="checkbox" [(ngModel)]="newProduct.soil" [value]="chalky" id="chalky" name="chalky" /> <label for="chalky">Calcaire</label><br />
-    <input type="checkbox" [(ngModel)]="newProduct.soil" [value]="sandy" id="sandy" name="sandy" /> <label for="sandy">Sableux</label><br />
-    <input type="checkbox" [(ngModel)]="newProduct.soil" [value]="humus" id="humus" name="humus" /> <label for="humus">Humus</label><br />
+    <input type="checkbox" [(ngModel)]="newProduct.soil" value="acid" id="acid" name="acid" /> <label for="acid">Acide</label><br />
+    <input type="checkbox" [(ngModel)]="newProduct.soil" value="clayey" id="clayey" name="clayey" /> <label for="clayey">Argileux</label><br />
+    <input type="checkbox" [(ngModel)]="newProduct.soil" value="chalky" id="chalky" name="chalky" /> <label for="chalky">Calcaire</label><br />
+    <input type="checkbox" [(ngModel)]="newProduct.soil" value="sandy" id="sandy" name="sandy" /> <label for="sandy">Sableux</label><br />
+    <input type="checkbox" [(ngModel)]="newProduct.soil" value="humus" id="humus" name="humus" /> <label for="humus">Humus</label><br />
 
     <label>Commentaire</label>
     <input type="text" [(ngModel)]="newProduct.comments">

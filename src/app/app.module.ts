@@ -9,6 +9,7 @@ import { ProductService } from './shared/product.service';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
 import {AddproductComponent} from './addproduct/addproduct.component';
+import { ArrayService } from './shared/array.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {AddproductComponent} from './addproduct/addproduct.component';
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    ProductService
+    ProductService,
+    ArrayService
    ],
    
   bootstrap: [AppComponent]
