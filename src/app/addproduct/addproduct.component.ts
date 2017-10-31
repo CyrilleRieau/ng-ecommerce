@@ -41,10 +41,10 @@ export class AddproductComponent implements OnInit {
         carving:false,
         treatment:false,
         fertilize:'',
-        exposition:this.expo, 
-        irrigation:this.irrig, 
-        resistance:this.resist, 
-        soil:this.soil, 
+        prodexpo:this.expo, 
+        prodirrig:this.irrig, 
+        prodresist:this.resist, 
+        prodsoil:this.soil, 
         comments:'',  
       };
     }

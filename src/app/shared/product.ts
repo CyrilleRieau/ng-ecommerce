@@ -21,10 +21,10 @@ export class Product {
         public carving:boolean,
         public treatment:boolean,
         public fertilize:string,
-        public exposition:string, 
-        public irrigation:string, 
-        public resistance:string, 
-        public soil:string, 
+        public prodexpo:object, 
+        public prodirrig:object, 
+        public prodresist:object, 
+        public prodsoil:object, 
         public comments:string,  
         public id?:number){}
 }

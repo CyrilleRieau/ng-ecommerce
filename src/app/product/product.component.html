@@ -8,7 +8,7 @@
         <th>Prix</th>
         <th>Période de semis</th>
         <th>Taille</th>
-        <th>Ajout Produit</th>
+        <!-- <th>Ajout Produit</th>-->
         <th>Variété</th>
         <th>Sol</th>
     </tr>
@@ -18,11 +18,11 @@
         <td>{{product.file}}</td>
         <td>{{product.description}}</td>
         <td>{{product.price}}</td>
-        <td>{{product.seed_period }}</td>
-        <td>{{product.carving }}</td>
-        <td>{{product.adding | date }}</td>
+        <td>{{product.seedPeriod }}</td>
+        <td>{{product.carving}}</td>
+        <!-- <td>{{product.adding | date:'dd/MM/yyyy'}}</td> -->
         <td>{{product.variety}}</td>
-        <td> Acid :{{product.prodsoil}}, Argile :{{product.prodsoil}}, Calcaire :{{product.prodsoil}}, Sableux :{{product.prodsoil}}, Humus :{{product.prodsoil}}</td>
+        <td>{{product.prodsoil.type}}</td>
     </tr>
     <!--<td><button (click)="removeUser(user.id)">Supprimer</button></td>
       <td><button (click)="aModifier=user">Modifier</button></td>-->
