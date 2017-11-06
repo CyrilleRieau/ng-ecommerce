@@ -16,6 +16,8 @@ export class AddproductComponent implements OnInit {
   newProduct:Product;
   @Output("onAdd")
   eventAjout:EventEmitter<Product> = new EventEmitter();
+
+  soilCheckboxes:boolean[] = [];
     
     constructor(private productService:ProductService, private arrayService:ArrayService) { 
       this.newProduct = {
@@ -57,6 +59,12 @@ export class AddproductComponent implements OnInit {
     }
   
     addProduct(){
+     /* for(let clef in this.soilCheckboxes) {
+        if(this.soilCheckboxes[clef]){
+          console.log(this.soil[clef]);
+        }
+      }*/
+      console.log(this.newProduct);
       this.eventAjout.emit(this.newProduct);
     }
 }

@@ -24,7 +24,7 @@ export class Product {
         public prodexpo:object, 
         public prodirrig:object, 
         public prodresist:object, 
-        public prodsoil:object, 
+        public prodsoil:Object, 
         public comments:string,  
         public id?:number){}
 }

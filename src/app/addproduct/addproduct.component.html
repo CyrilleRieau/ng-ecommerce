@@ -1,85 +1,76 @@
 <section>
+    <form (submit)="addProduct()">
+        <label>Nom</label>
+        <input type="text" name="name" [(ngModel)]="newProduct.name">
+        <label>Description</label>
+        <input type="text" name="description" [(ngModel)]="newProduct.description"><br />
+        <label>Couverture</label>
+        <input type="text" name="cover" [(ngModel)]="newProduct.cover">
+        <label>Image</label>
+        <input type="file" name="image" [(ngModel)]="newProduct.file"><br />
+        <label>Prix</label>
+        <input type="number" name="price" [(ngModel)]="newProduct.price">
+        <label>Ajout</label>
+        <input type="date" name="adding" [(ngModel)]="newProduct.adding">
+        <label>Marque</label>
+        <input type="text" name="brand" [(ngModel)]="newProduct.brand"><br />
+        <label>Disponible en Premium</label>
+        <input type="checkbox" name="isPremium" [(ngModel)]="newProduct.isPremium">
+        <label>Soldé </label>
+        <input type="checkbox" name="sold" [(ngModel)]="newProduct.onSold">
+        <label>Vendeur</label>
+        <input type="text" name="vendor" [(ngModel)]="newProduct.vendor"><br />
+        <label>Note</label>
+        <input type="number" name="note" [(ngModel)]="newProduct.note">
+        <label>Nombre de Produits</label>
+        <input type="number" name="numberProduct" [(ngModel)]="newProduct.numberOfProducts"><br />
+        <label>Nombre de votes</label>
+        <input type="number" name="numberVote" [(ngModel)]="newProduct.numberOfVote">
+        <label>Nombre de Commentaires</label>
+        <input type="number" name="numberComment" [(ngModel)]="newProduct.numberOfComments">
+        <label>Variété</label>
+        <input type="text" name="variety" [(ngModel)]="newProduct.variety">
+        <label>Période de semis</label>
+        <input type="text" name="seeding" [(ngModel)]="newProduct.seedPeriod">
+        <label>Espèce</label>
+        <input type="text" name="species" [(ngModel)]="newProduct.species">
+        <label>Type</label>
+        <input type="text" name="type" [(ngModel)]="newProduct.type"><br />
+        <label>Récolte</label>
+        <input type="text" name="harvest" [(ngModel)]="newProduct.harvest">
+        <label>Taille</label>
+        <input type="checkbox" name="carving" [(ngModel)]="newProduct.carving">
+        <label>Traitement</label>
+        <input type="checkbox" name="treatment" [(ngModel)]="newProduct.treatment">
+        <label>Engrais</label>
+        <input type="text" name="fertilize" [(ngModel)]="newProduct.fertilize"><br />
 
-    <label>Nom</label>
-    <input type="text" [(ngModel)]="newProduct.name">
-    <label>Description</label>
-    <input type="text" [(ngModel)]="newProduct.description">
-    <label>Couverture</label>
-    <input type="text" [(ngModel)]="newProduct.cover">
-    <label>Image</label>
-    <input type="image" [(ngModel)]="newProduct.file">
-    <label>Prix</label>
-    <input type="number" [(ngModel)]="newProduct.price">
-    <label>Couverture</label>
-    <input type="date" [(ngModel)]="newProduct.adding">
-    <label>Marque</label>
-    <input type="text" [(ngModel)]="newProduct.brand">
-    <label>Disponible en Premium</label>
-    <input type="checkbox" [(ngModel)]="newProduct.isPremium">
-    <label>Soldé </label>
-    <input type="checkbox" [(ngModel)]="newProduct.onSold">
-    <label>Vendeur</label>
-    <input type="text" [(ngModel)]="newProduct.vendor">
-    <label>Note</label>
-    <input type="number" [(ngModel)]="newProduct.note">
-    <label>Nombre de Produits</label>
-    <input type="number" [(ngModel)]="newProduct.numberOfProducts">
-    <!--<label>Nombre de votes</label>
-  <input type="number" [(ngModel)]="newProduct.numberOfVote">
-  <label>Nombre de Commentaires</label>
-  <input type="text" [(ngModel)]="newProduct.numberOfComments">-->
-    <label>Variété</label>
-    <input type="text" [(ngModel)]="newProduct.variety">
-    <label>Période de semis</label>
-    <input type="text" [(ngModel)]="newProduct.seedPeriod">
-    <label>Espèce</label>
-    <input type="text" [(ngModel)]="newProduct.species">
-    <label>Type</label>
-    <input type="date" [(ngModel)]="newProduct.type">
+        <label>Exposition</label>
+        <div *ngFor="let exposition of expo">
+            <input type="radio" [(ngModel)]="newProduct.prodexpo" value="{{exposition.type}}" id="{{exposition.type}}" name="exposition" />
+            <label for="{{exposition.type}}">{{exposition.type}}</label><br />
+        </div>
+        <label>Irrigation</label>
+        <div *ngFor="let irrigation of irrig">
+            <input type="radio" [(ngModel)]="newProduct.prodirrig" value="{{irrigation.type}}" id="{{irrigation.type}}" name="irrigation" />
+            <label for="{{irrigation.type}}">{{irrigation.type}}</label><br />
+        </div>
+        <label>Resistance</label> {{newProduct.prodresist | json}}
+        <div *ngFor="let resistance of resist">
+            <input type="radio" [(ngModel)]="newProduct.prodresist" value="{{resistance.type}}" id="{{resistance.type}}" name="resistance" />
+            <label for="{{resistance.type}}">{{resistance.type}}</label><br />
+        </div>
 
-    <label>Récolte</label>
-    <input type="text" [(ngModel)]="newProduct.harvest">
-    <label>Taille</label>
-    <input type="checkbox" [(ngModel)]="newProduct.carving">
-    <label>Couverture</label>
-    <input type="date" [(ngModel)]="newProduct.cover">
-    <label>Traitement</label>
-    <input type="checkbox" [(ngModel)]="newProduct.treatment">
-    <label>Engrais</label>
-    <input type="text" [(ngModel)]="newProduct.fertilize">
+        <label>Sol</label> {{newProduct.prodsoil | json}}
+        <div *ngFor="let soil of soil; let index = index">
+            <input type="checkbox" [(ngModel)]="soilCheckboxes[index]" id="{{soil.type}}" name="soil" />
+            <label for="{{soil.type}}">{{soil.type}}</label><br />
+        </div>
 
-    <label>Exposition</label>
-    <ng-template *ngFor="let exposition of prodexpo">
-        <input type="radio" [(ngModel)]="newProduct.exposition" value="windy" id="windy" name="windy" />
-        <label for="{{exposition.type}}">{{exposition.type}}</label><br />
-    </ng-template>
-    <label>Irrigation</label>
-    <ng-template *ngFor="let irrigation of prodirrig">
-        <input type="radio" [(ngModel)]="newProduct.irrigation" [value]="low" id="low" name="newProduct.irrigation.low" />
-        <label for="{{irrigation.type}}">{{irrigation.type}}</label><br />
-    </ng-template>
-    <label>Resistance</label>
-    <ng-template *ngFor="let resistance of prodresist">
-        <input type="radio" [(ngModel)]="newProduct.resistance" [value]="newProduct.resistance.inferiorto0" id="inferior0°C" name="newProduct.resistance.inferior0°C" />
-        <label for="{{resistance.type}}">{{resistance.type}}</label><br />
-    </ng-template>
+        <label>Commentaire</label>
+        <input type="text" name="comments" [(ngModel)]="newProduct.comments">
 
-    <label>Sol</label>
-    <ng-template *ngFor="let soil of prodsoil">
-        <input type="checkbox" [(ngModel)]="newProduct.soil" [value]="newProduct.soil.type" id="acid" name="newProduct.soil.acid" />
-        <label for="acid">Acide</label><br />
-        <input type="checkbox" [(ngModel)]="newProduct.soil" [value]="newProduct.soil.type" id="clayey" name="newProduct.soil.clayey" />
-        <label for="clayey">Argileux</label><br />
-        <input type="checkbox" [(ngModel)]="newProduct.soil" [value]="newProduct.soil.type" id="chalky" name="newProduct.soil.chalky" />
-        <label for="chalky">Calcaire</label><br />
-        <input type="checkbox" [(ngModel)]="newProduct.soil" [value]="newProduct.soil.type" id="sandy" name="newProduct.soil.sandy" />
-        <label for="sandy">Sableux</label><br />
-        <input type="checkbox" [(ngModel)]="newProduct.soil" [value]="newProduct.soil.type" id="humus" name="newProduct.soil.humus" />
-        <label for="humus">Humus</label><br />
-    </ng-template>
 
-    <label>Commentaire</label>
-    <input type="text" [(ngModel)]="newProduct.comments">
-
-    <button (click)="addProduct()">Ajouter</button>
+        <br /><button (click)="addProduct()">Ajouter</button>
+    </form>
 </section>
