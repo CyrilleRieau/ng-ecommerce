@@ -1,5 +1,5 @@
 <section>
-    <form (submit)="addProduct()">
+    <form (submit)=addingProduct()>
         <label>Nom</label>
         <input type="text" name="name" [(ngModel)]="newProduct.name">
         <label>Description</label>
@@ -55,13 +55,13 @@
             <input type="radio" [(ngModel)]="newProduct.prodirrig" value="{{irrigation.type}}" id="{{irrigation.type}}" name="irrigation" />
             <label for="{{irrigation.type}}">{{irrigation.type}}</label><br />
         </div>
-        <label>Resistance</label> {{newProduct.prodresist | json}}
+        <label>Resistance</label>
         <div *ngFor="let resistance of resist">
             <input type="radio" [(ngModel)]="newProduct.prodresist" value="{{resistance.type}}" id="{{resistance.type}}" name="resistance" />
             <label for="{{resistance.type}}">{{resistance.type}}</label><br />
         </div>
 
-        <label>Sol</label> {{newProduct.prodsoil | json}}
+        <label>Sol</label>
         <div *ngFor="let soil of soil; let index = index">
             <input type="checkbox" [(ngModel)]="soilCheckboxes[index]" id="{{soil.type}}" name="soil" />
             <label for="{{soil.type}}">{{soil.type}}</label><br />
@@ -70,7 +70,7 @@
         <label>Commentaire</label>
         <input type="text" name="comments" [(ngModel)]="newProduct.comments">
 
-
-        <br /><button (click)="addProduct()">Ajouter</button>
+        <br />
+        <button>Ajouter</button>
     </form>
 </section>

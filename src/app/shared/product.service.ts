@@ -6,6 +6,7 @@ import {Observable} from 'rxjs';
 @Injectable()
 export class ProductService {
   private urlApi:string = 'http://localhost:8000/products';
+  private urlApiAdd:string = 'http://localhost:8000/addproduct/new';
   constructor (private http:HttpClient) {}
     
   getAllProducts():Observable<Product[]> {
@@ -24,4 +25,9 @@ export class ProductService {
   updateUser(id:number, entity:User):Observable<User>{
     return this.http.patch<User>(this.urlApi+'/'+id, entity);
   }*/
+
+  addProduct(product:Product):Observable<Product>{
+    return this.http.post<Product>(this.urlApiAdd, product);
+}
+
 }

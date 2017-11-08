@@ -11,7 +11,7 @@ export const appRoutes:Routes = [
     {path:'irrigations', component: AddproductComponent},
     {path:'resistances', component: AddproductComponent},
     {path:'soils', component: AddproductComponent},
-    {path:'products/new', component: AddproductComponent},
+    {path:'addproduct/new', component: AddproductComponent},
    // {path:'products/:id', component: FicheProduitComponent},
     {path:'', pathMatch:'full', redirectTo:'/products'},
     {path:'**', component:PagenotfoundComponent}

@@ -58,13 +58,13 @@ export class AddproductComponent implements OnInit {
       this.arrayService.getSoil().subscribe((soils)=> this.soil = soils);
     }
   
-    addProduct(){
+    addingProduct(){
      /* for(let clef in this.soilCheckboxes) {
         if(this.soilCheckboxes[clef]){
           console.log(this.soil[clef]);
         }
       }*/
       console.log(this.newProduct);
-      this.eventAjout.emit(this.newProduct);
+      this.productService.addProduct(this.newProduct).subscribe();
     }
 }
