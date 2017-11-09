@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Product } from './product';
-import {Observable} from 'rxjs';
+import {Observable } from 'rxjs';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
+
 
 @Injectable()
 export class ProductService {
   private urlApi:string = 'http://localhost:8000/products';
   private urlApiAdd:string = 'http://localhost:8000/addproduct/new';
+private _options = { headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' }) };
   constructor (private http:HttpClient) {}
     
   getAllProducts():Observable<Product[]> {
@@ -27,7 +30,7 @@ export class ProductService {
   }*/
 
   addProduct(product:Product):Observable<Product>{
-    return this.http.post<Product>(this.urlApiAdd, product);
+    return this.http.post<Product>(this.urlApiAdd, product, this._options);
 }
 
 }
